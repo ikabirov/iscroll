@@ -15,6 +15,7 @@ function IScroll (el, options) {
 		scrollY: true,
 		directionLockThreshold: 5,
 		momentum: true,
+		onScrollHandler: Function.prototype,
 
 		bounce: true,
 		bounceTime: 600,
@@ -602,7 +603,7 @@ IScroll.prototype = {
 		this.y = y;
 
 // INSERT POINT: _translate
-
+		this.options.onScrollHandler();
 	},
 
 	_initEvents: function (remove) {
