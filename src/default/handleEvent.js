@@ -43,8 +43,8 @@
 				break;
 			case 'click':
 				if ( this.enabled && !e._constructed ) {
-					e.preventDefault();
-					e.stopPropagation();
+					//e.preventDefault();
+					//e.stopPropagation();
 				}
 				break;
 		}
