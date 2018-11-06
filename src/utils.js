@@ -167,7 +167,24 @@ var utils = (function () {
 		};
 	};
 
+	me.isHyperlink = function(element){
+		if (!element) {
+			return false;
+		}
+
+		while (element)	{
+			if (element.nodeName.toLocaleUpperCase() == "A"){
+				return true;
+			}
+			element = element.parentNode;
+		}
+		return false;
+	};
+
 	me.preventDefaultException = function (el, exceptions) {
+		if (me.isHyperlink(el)){
+			return true;
+		}
 		for ( var i in exceptions ) {
 			if ( exceptions[i].test(el[i]) ) {
 				return true;
